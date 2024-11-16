@@ -628,7 +628,7 @@
 
 <!-- Day seven -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -683,5 +683,49 @@
       ];
       console.log(newComments);
     </script>
+  </body>
+</html> -->
+
+<!-- Day Eight -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML5 Canvas</title>
+    <link rel="icon" href="https://fav.farm/🔥" />
+  </head>
+  <body>
+    <canvas id="draw" width="800" height="800"></canvas>
+    <script>
+      const canvas = document.getElementById("draw");
+      const ctx = canvas.getContext("2d");
+      console.log(ctx);
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      ctx.strokeStyle = "#bada55";
+      ctx.lineJoin = "round";
+      ctx.lineCap = "round";
+
+      let lastX = 0;
+      let lasY = 0;
+      let isDrawing = false;
+
+      function check(e) {
+        if (!isDrawing) return;
+        console.log(e);
+      }
+      canvas.addEventListener("mousemove", check);
+      canvas.addEventListener("mousedown", () => (isDrawing = true));
+      canvas.addEventListener("mouseup", () => (isDrawing = false));
+      canvas.addEventListener("mouseout", () => (isDrawing = false));
+    </script>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+      }
+    </style>
   </body>
 </html>
